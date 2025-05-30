@@ -1,5 +1,3 @@
-import React from "react";
-
 const AllItem = ({task, index, removeTask}) => {
     return(
         <li className="task-item">

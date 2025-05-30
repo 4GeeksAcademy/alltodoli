@@ -1,18 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import InputList from "./InputList";
 import AllList from "./AllList";
+import "../../styles/index.css"
 
 const Home = () => {
 	const [task, setTask] = useState([]);
 
-	const addTask = (task) => {
-		setTask([...task, task]);
+	const addTask = (newTask) => {
+		setTask(prevTask => [...prevTask, newTask]);
 	};
 
-	const removeTask = (index) => {
-		setTask(task.filter((_, i) => i !== index));
-	}
 
+const removeTask = (index) => { 
+	setTask(task.filter((_, i) => i !== index));
+ }
+
+ 
 	return (
 		<div className="maincontainer">
 			<h1>Lista de Tareas</h1>
@@ -21,3 +24,5 @@ const Home = () => {
 		</div>
 	)
 }
+
+export default Home;

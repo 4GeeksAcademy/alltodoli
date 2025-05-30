@@ -1,14 +1,13 @@
-import React from "react";
 import AllItem from "../components/AllItem";
 
-const AllList = ({task, removeTask}) => {
+const AllList = ({task = [], removeTask}) => {
     return (
         <ul>
             {task.length === 0 ? (
                 <li className="empty">No hay tareas, añadir tareas</li>
             ) : (
                 task.map((task, index) => (
-                    <AllItem key={index} task={task} removeTask={removeTask} />
+                    <AllItem key={`${task}-${index}`} task={task} index ={index} removeTask={removeTask} />
                 )
             ))
             }
