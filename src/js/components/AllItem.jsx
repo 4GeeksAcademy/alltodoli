@@ -1,8 +1,8 @@
-const AllItem = ({task, index, removeTask}) => {
+const AllItem = ({task, taskId, removeTask}) => {
     return(
         <li className="task-item">
             {task}
-            <button className="deletebtn" onClick={() => removeTask(index)}>X</button>
+            <button className="deletebtn" onClick={() => removeTask(taskId)}>X</button>
         </li>
     )
 }
